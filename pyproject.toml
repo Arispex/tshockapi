@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "tshockapi"
+version = "0.1.0"
+description = "Quick access to TShock REST API using python."
+authors = ["Qianyiovo <qianyiovo@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^1.10.2"
+httpx = "^0.23.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
