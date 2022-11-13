@@ -1,24 +1,22 @@
-from pydantic import BaseModel
 import httpx
 
 
-class Server(BaseModel):
+class Server:
     """
     TShock Server Object
     """
-    host: str
-    port: int
-    token: str
-    timeout: int = 5
 
-    def __init__(self, host: str, port: int, token: str):
+    def __init__(self, host: str, port: int, token: str, timeout: int = 5):
         """
         Initialize a TShock Server Object
         :param host: Server host
         :param port: Server port
         :param token: Server token
         """
-        super().__init__(host=host, port=port, token=token)
+        self.host = host
+        self.port = port
+        self.token = token
+        self.timeout = timeout
 
     def request(self, endpoint: str, **kwargs) -> dict:
         """
