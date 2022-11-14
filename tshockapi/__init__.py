@@ -409,3 +409,34 @@ class Server:
         :return: a result dict
         """
         return self.request("v2/players/mute", player=player)
+
+    def v4_players_read(self, player: str):
+        """
+        Description:
+
+        The player to lookup
+
+        Returns:
+
+        nickname - The nickname of the player.
+
+        username - The username of the player.
+
+        ip - The IP address of the player.
+
+        group - The group of the player.
+
+        registered - Whether or not the player is registered.
+
+        muted - Whether or not the player is muted.
+
+        position - The position of the player.
+
+        items - The inventory of the player.
+
+        buffs - The buffs of the player.
+
+        :param player: The player to read.
+        :return: a result dict
+        """
+        return self.request("v4/players/read", player=player)
