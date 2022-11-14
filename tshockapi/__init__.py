@@ -483,3 +483,17 @@ class Server:
         :return: a result dict
         """
         return self.request("v3/server/reload")
+
+    def v3_server_rules(self):
+        """
+        Description:
+
+        Returns the rules, if they exist. No special permissions are required for this route.
+
+        Returns:
+
+        rules - The current rules.
+
+        :return: a result dict
+        """
+        return self.request("v3/server/rules")
