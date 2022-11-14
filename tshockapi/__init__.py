@@ -497,3 +497,17 @@ class Server:
         :return: a result dict
         """
         return self.request("v3/server/rules")
+
+    def v3_world_bloodmoon(self):
+        """
+        Description:
+
+        Toggle the status of blood moon.
+
+        Returns:
+
+        response - A response message
+
+        :return: a result dict
+        """
+        return self.request("v3/world/bloodmoon")
