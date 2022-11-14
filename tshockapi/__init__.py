@@ -285,3 +285,19 @@ class Server:
         if end != -1:
             d["end"] = end
         return self.request("v3/bans/create", **d)
+
+    def v3_bans_destroy(self, ticketNumber: int, fullDelete: bool = False):
+        """
+        Description:
+
+        Delete an existing ban entry.
+
+        Returns:
+
+        response - A response message
+
+        :param ticketNumber: The ticket number of the ban to delete.
+        :param fullDelete: Whether or not to completely remove the ban from the system.
+        :return: a result dict
+        """
+        return self.request("v3/bans/destroy", ticketNumber=ticketNumber, fullDelete=fullDelete)
