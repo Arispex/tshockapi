@@ -436,7 +436,22 @@ class Server:
 
         buffs - The buffs of the player.
 
-        :param player: The player to read.
+        :param player: The player to lookup.
         :return: a result dict
         """
         return self.request("v4/players/read", player=player)
+
+    def v2_players_unmute(self, player: str):
+        """
+        Description:
+
+        Unmute a player.
+
+        Returns:
+
+        response - A response message
+
+        :param player: The player to unmute.
+        :return: a result dict
+        """
+        return self.request("v2/players/unmute", player=player)
