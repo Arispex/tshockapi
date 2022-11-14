@@ -455,3 +455,17 @@ class Server:
         :return: a result dict
         """
         return self.request("v2/players/unmute", player=player)
+
+    def v3_server_motd(self):
+        """
+        Description:
+
+        Returns the motd, if it exists. No special permissions are required for this route.
+
+        Returns:
+
+        motd - The current MOTD.
+
+        :return: a result dict
+        """
+        return self.request("v3/server/motd")
