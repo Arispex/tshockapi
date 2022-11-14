@@ -326,3 +326,17 @@ class Server:
         :return: a result dict
         """
         return self.request("v3/bans/read", ticketNumber=ticketNumber)
+
+    def v3_bans_list(self):
+        """
+        Description:
+
+        View all bans in the TShock database.
+
+        Returns:
+
+        bans - A list of all bans in the TShock database.
+
+        :return: a result dict
+        """
+        return self.request("v3/bans/list")
