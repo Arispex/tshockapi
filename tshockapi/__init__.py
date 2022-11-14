@@ -286,7 +286,7 @@ class Server:
             d["end"] = end
         return self.request("v3/bans/create", **d)
 
-    def v3_bans_destroy(self, ticketNumber: int, fullDelete: bool = False):
+    def v3_bans_destroy(self, ticketNumber: str, fullDelete: bool = False):
         """
         Description:
 
@@ -301,3 +301,28 @@ class Server:
         :return: a result dict
         """
         return self.request("v3/bans/destroy", ticketNumber=ticketNumber, fullDelete=fullDelete)
+
+    def v3_bans_read(self, ticketNumber: str):
+        """
+        Description:
+
+        View the details of a specific ban.
+
+        Returns:
+
+        ticket_number - The ticket number of the ban.
+
+        identifier - The identifier of the ban.
+
+        reason - The reason for the ban.
+
+        banning_user - The user who created the ban.
+
+        start_data_ticks - The start date of the ban in ticks.
+
+        end_date_ticks - The end date of the ban in ticks.
+
+        :param ticketNumber: The ticket number to search for.
+        :return: a result dict
+        """
+        return self.request("v3/bans/read", ticketNumber=ticketNumber)
