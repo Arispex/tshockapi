@@ -564,3 +564,17 @@ class Server:
         :return: a result dict
         """
         return self.request("world/read")
+
+    def v2_world_save(self):
+        """
+        Description:
+
+        Save the world.
+
+        Returns:
+
+        response - A response message
+
+        :return: a result dict
+        """
+        return self.request("v2/world/save")
