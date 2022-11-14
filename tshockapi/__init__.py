@@ -469,3 +469,17 @@ class Server:
         :return: a result dict
         """
         return self.request("v3/server/motd")
+
+    def v3_server_reload(self):
+        """
+        Description:
+
+        Reload config files for the server.
+
+        Returns:
+
+        response - A response message
+
+        :return: a result dict
+        """
+        return self.request("v3/server/reload")
