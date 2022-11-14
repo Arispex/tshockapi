@@ -394,3 +394,18 @@ class Server:
         :return: a result dict
         """
         return self.request("v2/players/list")
+
+    def v2_players_mute(self, player: str):
+        """
+        Description:
+
+        Mute a player.
+
+        Returns:
+
+        response - A response message
+
+        :param player: The player to mute.
+        :return: a result dict
+        """
+        return self.request("v2/players/mute", player=player)
