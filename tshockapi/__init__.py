@@ -578,3 +578,17 @@ class Server:
         :return: a result dict
         """
         return self.request("v2/world/save")
+
+    def v2_users_list(self):
+        """
+        Description:
+
+        Lists all user accounts in the TShock database.
+
+        Returns:
+
+        users - A list of all users in the TShock database.
+
+        :return: a result dict
+        """
+        return self.request("v2/users/list")
