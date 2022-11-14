@@ -378,3 +378,19 @@ class Server:
         if from_ != -1:
             d["from"] = from_
         return self.request("v2/players/kill", **d)
+
+    def v2_players_list(self):
+        """
+        Description:
+
+        Fetches detailed user information on all connected users, and can be filtered by specifying a key value pair
+        filter users where the key is a field and the value is a users field value. No special permissions are
+        required for this route.
+
+        Returns:
+
+        players -  A list of all current players on the server, separated by a comma.
+
+        :return: a result dict
+        """
+        return self.request("v2/players/list")
