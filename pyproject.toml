@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "tshockapi"
-version = "0.1.1"
+version = "0.1.2"
 description = "Quick access to TShock REST API using python."
 authors = ["Qianyiovo <qianyiovo@outlook.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.7"
 httpx = "^0.23.0"
 
 
