@@ -260,3 +260,28 @@ class Server:
         if group != -1:
             d["group"] = group
         return self.request("v2/users/update", **d)
+
+    def v3_bans_create(self, identifier: str, reason: str = -1, start: str = -1, end: str = -1):
+        """
+        Description:
+
+        Create a new ban entry.
+
+        Returns:
+
+        response - A response message
+
+        :param identifier: The identifier to ban.
+        :param reason: The reason to assign to the ban.
+        :param start: The datetime at which the ban should start.
+        :param end: The datetime at which the ban should end.
+        :return: a result dict
+        """
+        d = {"identifier": identifier}
+        if reason != -1:
+            d["reason"] = reason
+        if start != -1:
+            d["start"] = start
+        if end != -1:
+            d["end"] = end
+        return self.request("v3/bans/create", **d)
