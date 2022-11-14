@@ -540,3 +540,27 @@ class Server:
         :return: a result dict
         """
         return self.request("world/meteor")
+
+    def world_read(self):
+        """
+        Description:
+
+        Get information regarding the world. No special permissions are required for this route.
+
+        Returns:
+
+        name - The name of the world.
+
+        size - The size of the world.
+
+        time - The time of the world.
+
+        daytime - Whether or not it is daytime.
+
+        bloodmoon - The bloodmoon status of the world.
+
+        invasionsize - The invasion size of the world.
+
+        :return: a result dict
+        """
+        return self.request("world/read")
