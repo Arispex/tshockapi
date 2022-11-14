@@ -511,3 +511,18 @@ class Server:
         :return: a result dict
         """
         return self.request("v3/world/bloodmoon")
+
+    def v2_world_butcher(self, killfriendly: bool = False):
+        """
+        Description:
+
+        Butcher npcs.
+
+        Returns:
+
+        response - A response message
+
+        :param killfriendly: Should friendly npcs be butchered.
+        :return: a result dict
+        """
+        return self.request("v2/world/butcher", killfriendly=killfriendly)
