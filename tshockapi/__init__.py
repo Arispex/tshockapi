@@ -340,3 +340,41 @@ class Server:
         :return: a result dict
         """
         return self.request("v3/bans/list")
+
+    def v2_players_kick(self, player: str, reason: str = -1):
+        """
+        Description:
+
+        Kick a player off the server.
+
+        Returns:
+
+        response - A response message
+
+        :param player: The player to kick.
+        :param reason: The reason the player was kicked.
+        :return: a result dict
+        """
+        d = {"player": player}
+        if reason != -1:
+            d["reason"] = reason
+        return self.request("v2/players/kick", **d)
+
+    def v2_players_kill(self, player: str, from_: str = -1):
+        """
+        Description:
+
+        Kill a player.
+
+        Returns:
+
+        response - A response message
+
+        :param from_: Who killed the player.
+        :param player: The player to kill.
+        :return: a result dict
+        """
+        d = {"player": player}
+        if from_ != -1:
+            d["from"] = from_
+        return self.request("v2/players/kill", **d)
