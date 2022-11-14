@@ -526,3 +526,17 @@ class Server:
         :return: a result dict
         """
         return self.request("v2/world/butcher", killfriendly=killfriendly)
+
+    def world_meteor(self):
+        """
+        Description:
+
+        Drops a meteor on the world.
+
+        Returns:
+
+        response - A response message
+
+        :return: a result dict
+        """
+        return self.request("world/meteor")
