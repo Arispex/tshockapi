@@ -237,3 +237,26 @@ class Server:
         :return: a result dict
         """
         return self.request("v2/users/destroy", type=type, user=user)
+
+    def v2_users_update(self, type: str, user: str, password: str = -1, group: str = -1):
+        """
+        Description:
+
+        Edits the settings of a user
+
+        Returns:
+
+        response - A response message
+
+        :param type: name, id or ip indicating what the "user" parameter refers to
+        :param user: The name, ip or id of a currently registered user
+        :param password: The new password you wish to assign to that user (optional)
+        :param group: The new group you wish to assign to that user (optional)
+        :return: a result dict
+        """
+        d = {"type": type, "user": user}
+        if password != -1:
+            d["password"] = password
+        if group != -1:
+            d["group"] = group
+        return self.request("v2/users/update", **d)
